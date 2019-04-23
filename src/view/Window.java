@@ -1,16 +1,9 @@
 package view;
 
-import generator.RandomGenerator;
-import model.Oval;
-import model.Rectangle;
 import model.Shape;
-import model.Triangle;
 
 import javax.swing.*;
-
-import java.awt.*;
 import java.util.List;
-
 
 import static common.Constants.WINDOW_HEIGHT;
 import static common.Constants.WINDOW_WIDTH;
@@ -33,10 +26,7 @@ public class Window extends JFrame {
         initializeWindow();
         initializePanels();
         initializeLayout();
-
     }
-
-
 
     public void addShapeToLeftPanel(Shape shape) {
         List<Shape> shapesList = leftPaintingPanel.getShapesList();

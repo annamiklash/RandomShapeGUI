@@ -2,7 +2,7 @@ package controller;
 
 import controller.listener.ListenersInit;
 import generator.RandomGenerator;
-import model.Oval;
+import model.Ellipse;
 import model.Rectangle;
 import model.Shape;
 import model.Triangle;
@@ -25,13 +25,13 @@ public class Controller {
         ListenersInit.addLoadButtonListener(window.getLoadFromFileButton(), this);
     }
 
-    public void save() {
-        FileUtil.saveToFile(window.getShapeList());
-    }
-
     public void generate() {
         PaintingThread paintingThread = new PaintingThread(this);
         paintingThread.start();
+    }
+
+    public void save() {
+        FileUtil.saveToFile(window.getShapeList());
     }
 
     public void load() {
@@ -47,7 +47,7 @@ public class Controller {
         } else if (shapeChoice == 1) {
             window.addShapeToLeftPanel(new Triangle());
         } else if (shapeChoice == 2) {
-            window.addShapeToLeftPanel(new Oval());
+            window.addShapeToLeftPanel(new Ellipse());
         }
     }
 

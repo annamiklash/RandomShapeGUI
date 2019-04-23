@@ -1,6 +1,6 @@
 package util;
 
-import model.Oval;
+import model.Ellipse;
 import model.Rectangle;
 import model.Shape;
 import model.Triangle;
@@ -16,7 +16,7 @@ import static common.Constants.FILE_NAME;
 public class FileUtil {
     final static String RECTANGLE = "Rectangle:x=";
     final static String TRIANGLE = "Triangle:x=";
-    final static String OVAL = "Oval:x=";
+    final static String ELLIPSE = "Ellipse:x=";
 
 
     public static void saveToFile(List<Shape> shapeList) {
@@ -63,10 +63,10 @@ public class FileUtil {
 
             //paint Triangle in the right panel
             //return Triangle
-        } else if (line.contains(OVAL)) {
-            return buildShapeFromFile(OVAL, line);
-            //paint Oval in the right panel
-            //return Oval
+        } else if (line.contains(ELLIPSE)) {
+            return buildShapeFromFile(ELLIPSE, line);
+            //paint Ellipse in the right panel
+            //return Ellipse
 
         }
         return null;
@@ -112,7 +112,7 @@ public class FileUtil {
         } else if (line.contains(TRIANGLE)) {
             return new Triangle(resultX, resultY, resultWidth, resultHeight, color);
         } else {
-            return new Oval(resultX, resultY, resultWidth, resultHeight, color);
+            return new Ellipse(resultX, resultY, resultWidth, resultHeight, color);
         }
 
     }

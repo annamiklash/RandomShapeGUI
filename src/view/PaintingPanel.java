@@ -28,8 +28,6 @@ public class PaintingPanel extends JPanel {
                 shape.paint(g, this.getSize());
             }
         }
-
-
     }
 
     public List<Shape> getShapesList() {
@@ -40,10 +38,5 @@ public class PaintingPanel extends JPanel {
         this.shapesList = shapesList;
     }
 
-    @Override
-    public String toString() {
-        return "PaintingPanel{" +
-                "shapesList=" + shapesList +
-                '}';
-    }
+
 }

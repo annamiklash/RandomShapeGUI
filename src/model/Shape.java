@@ -51,14 +51,5 @@ public abstract class Shape {
 
     public abstract void paint(Graphics g, Dimension panelSize);
 
-    @Override
-    public String toString() {
-        return "Shape{" +
-                "x=" + x +
-                ",y=" + y +
-                ",width=" + width +
-                ",height=" + height +
-                ",color=" + color +
-                '}';
-    }
+    public abstract String toString();
 }

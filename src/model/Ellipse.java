@@ -2,15 +2,15 @@ package model;
 
 import java.awt.*;
 
-public class Oval extends Shape {
+public class Ellipse extends Shape {
 
 
-    public Oval(float resultX, float resultY, float resultWidth, float resultHeight, Color color) {
+    public Ellipse(float resultX, float resultY, float resultWidth, float resultHeight, Color color) {
         super(resultX, resultY, resultWidth, resultHeight, color);
 
     }
 
-    public Oval() {
+    public Ellipse() {
         super();
     }
 
@@ -25,7 +25,7 @@ public class Oval extends Shape {
 
     @Override
     public String toString() {
-        return "Oval:" +
+        return "Ellipse:" +
                 "x=" + x +
                 ",y=" + y +
                 ",width=" + width +

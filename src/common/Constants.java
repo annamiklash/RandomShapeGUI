@@ -8,8 +8,4 @@ public class Constants {
     public static final int INTERVAL = 200;
     public static final int NUMBER_OF_SHAPES = 10;
 
-
-
-
-
 }
