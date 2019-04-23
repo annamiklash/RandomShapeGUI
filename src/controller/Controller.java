@@ -39,7 +39,7 @@ public class Controller {
         window.repaintLoadedShapeList(shapeList);
     }
 
-    public void generateRandomShape() {
+    void generateRandomShape() {
         int shapeChoice = RandomGenerator.generateInt();
 
         if (shapeChoice == 0) {
