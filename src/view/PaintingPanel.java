@@ -5,16 +5,16 @@ import model.Shape;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-import static common.Constants.WINDOW_HEIGHT;
 import static common.Constants.WINDOW_WIDTH;
 
 public class PaintingPanel extends JPanel {
-    private List<Shape> shapesList;
+    private List shapesList;
 
     public PaintingPanel() {
-        this.shapesList = new ArrayList<>();
+        this.shapesList = Collections.synchronizedList(new ArrayList());
 
         this.setBackground(Color.cyan);
         this.setPreferredSize(new Dimension(WINDOW_WIDTH / 2, HEIGHT));
@@ -22,10 +22,13 @@ public class PaintingPanel extends JPanel {
 
     public void paint(Graphics g) {
         super.paint(g);
-
-        for (Shape shape : shapesList) {
-            shape.paint(g, this.getSize());
+        synchronized (shapesList) {
+            for (Object object : shapesList) {
+                Shape shape = (Shape) object;
+                shape.paint(g, this.getSize());
+            }
         }
+
 
     }
 

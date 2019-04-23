@@ -1,15 +1,13 @@
 package controller;
 
-import view.Window;
-
 import static common.Constants.INTERVAL;
 import static common.Constants.NUMBER_OF_SHAPES;
 
-public class PrintingThread extends Thread {
+public class PaintingThread extends Thread {
 
     private Controller controller;
 
-    public PrintingThread(Controller controller){
+    public PaintingThread(Controller controller){
         this.controller = controller;
 
     }

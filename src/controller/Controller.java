@@ -30,8 +30,8 @@ public class Controller {
     }
 
     public void generate() {
-        PrintingThread printingThread = new PrintingThread(this);
-        printingThread.start();
+        PaintingThread paintingThread = new PaintingThread(this);
+        paintingThread.start();
     }
 
     public void load() {

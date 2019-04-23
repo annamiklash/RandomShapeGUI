@@ -1,6 +1,5 @@
 package util;
 
-import common.Constants;
 import model.Oval;
 import model.Rectangle;
 import model.Shape;
@@ -23,10 +22,12 @@ public class FileUtil {
     public static void saveToFile(List<Shape> shapeList) {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME));
-
-            for (Shape shape : shapeList) {
-                writer.write(shape.toString() + '\n');
+            synchronized (shapeList) {
+                for (Shape shape : shapeList) {
+                    writer.write(shape.toString() + '\n');
+                }
             }
+
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
